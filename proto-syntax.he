@@ -1,0 +1,26 @@
+enum NameType { First, Last }
+
+struct name {
+  age: Int
+  name: Int
+  type: NameType
+}
+
+fn hello_world() -> IO Int {
+  using IO {
+    age <- read_age();
+    io.print("You are % years old", age);
+    io.unit 10
+  }
+}
+
+fn is_ok(name: String) -> bool {
+  String.start_with(name, "things")
+}
+
+fn add_nums(a: Int, b: Int): Int {
+  a + b
+}
+
+hello_world();
+

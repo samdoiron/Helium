@@ -1,0 +1,10 @@
+whitespace = { " " }
+
+identifier = @{ ('a'..'z'|'A'..'Z'|"-")+ }
+integer = @{ '0'..'9'+ }
+string = @{ "\"" ~ (!("\"") ~ any)* ~ "\"" }
+
+func_call = { identifier ~ "(" ~ expression? ~ ")" }
+
+expression = { func_call | integer | string }
+program = { (expression ~ ";")+ }
